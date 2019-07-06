@@ -1,6 +1,9 @@
 // node liri.js moviethis "boss baby"
 var request = require("request");
 var axios = require("axios");
+var moment = require("moment");
+
+
 var arg1 = process.argv[2];
 var arg2 = process.argv.slice(3).join(" ");
 
@@ -70,16 +73,21 @@ function getMovieInfo(movieName) {
 function getConcertInfo(artist){
     console.log("get band info");
     
-    var concertUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp"
+    
+    var concertUrl = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
 
     axios.get(concertUrl)
     .then(function(response){
-        console.log(response);
-        var jsonData = response.data;
+        // console.log(response);
+        var jsonData = response.data[0];
+        var concertTime = jsonData.datetime;
 
         var concertData = [
-            "Venue: " + jsonData.venue
-        ];
+            "Venue: " + jsonData.venue.name,
+            "Location: " + jsonData.venue.city,
+            "Time of Event: " + moment(concertTime).format("MM/DD/YYYY h:mm:ss a")
+            
+        ].join("\n\n");
 
         console.log(concertData);
     })
