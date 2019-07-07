@@ -5,11 +5,15 @@ LIRI is a _Language_ Interpretation and Recognition Interface. LIRI will be a co
 You can use liri to look up concert, movie, and song data.
 
 
-NPM packages used:
+* NPM packages used:
 
-*Axios
-  *Moment
-  *Spotify
+  * Axios
+  * Moment
+  * Spotify
 
 
+
+Lead Software Engineer:\
+\
+_Marlon Umeadi_
 :shipit:
