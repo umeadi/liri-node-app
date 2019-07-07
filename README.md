@@ -8,8 +8,8 @@ You can use liri to look up concert, movie, and song data.
 NPM packages used:
 
 *Axios
-*Moment
-*Spotify
+  *Moment
+  *Spotify
 
 
 :shipit:
